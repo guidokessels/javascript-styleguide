@@ -26,16 +26,19 @@ code more readable, and thus more easier to maintain.
 ### Identation
 Each identation level is made up of four spaces. No tabs.
 
+```javascript
     //Good
     if (true) {
         doSomething();
     }
+```
 
 ### Line Length
 Each line should be no longer than 100 characters. If a line goes longer than 100 characters, it 
 should be wrapped after an operator (comma, plus, etc.) The following line should be indented two
 levels (eight spaces.)
 
+```javascript
     // Good
     doSomething(argument1, argument2, argument3, argument4,
             argument5);
@@ -47,10 +50,12 @@ levels (eight spaces.)
     // Bad: Breaking before operator
     doSomething(argument1, argument2, argument3, argument4
         , argument5);
+```
 
 ### Primitive Literals
 String should always use single quotes and should always be on a single line.
 
+```javascript
     // Good
     var name = 'SpilGames';
 
@@ -60,11 +65,13 @@ String should always use single quotes and should always be on a single line.
     // Bad: Wrapping to second line
     var longString = 'This is a string spanning \
     multiple lines.';
+```
 
 Number should be written as decimal integers, e-notation integers, hexadecimal integers, or 
 floating-point decimals with at least one digit before and one digit after the decimal point. 
 _Never_ use octal literals.
 
+```javascript
     // Good
     var count = 10;
     var price = 10.0;
@@ -80,6 +87,7 @@ _Never_ use octal literals.
 
     // Bad: Octal (base 8) is deprecated
     var num = 010;
+```
 
 The special value `null` should be used only in the following situations:
 
@@ -89,7 +97,8 @@ The special value `null` should be used only in the following situations:
 - To return from a function where an object is expected
 
 Examples:
-    
+
+```javascript    
     // Good
     var person = null;
 
@@ -120,10 +129,12 @@ Examples:
             doSomethingElse();
         }
     }
+```
 
 Never use the special value `undefined`. To see if a variable has been defined, use the `typeof`
 operator:
 
+```javascript
     // Good
     if (typeof variable == "undefined") {
         // do something
@@ -133,11 +144,13 @@ operator:
     if (variable == undefined) {
         // do something
     }
+```
 
 ### Operator Spacing
 Operators with two operands must be preceded and followed by a single space to make
 the expression clear. Operators include assignments and logical operators.
 
+```javascript
     // Good
     var found = (values[i] === item);
 
@@ -163,11 +176,13 @@ the expression clear. Operators include assignments and logical operators.
     for (i=0; i<count; i++) {
         process(i);
     }
+```
 
 ### Parentheses Spacing
 When parentheses are used, there should be no white space immediately after the
 opening paren or immediately before the closing paren.
 
+```javascript
     // Good
     var found = (values[i] === item);
 
@@ -193,6 +208,7 @@ opening paren or immediately before the closing paren.
     for (i = 0; i < count; i++) {
         process( i );
     }
+```
 
 ### Object Literals
 Object literals should have the following format:
@@ -210,6 +226,7 @@ readability.
 
 Examples:
 
+```javascript
     // Good
     var object = {
         key1: value1,
@@ -237,10 +254,12 @@ Examples:
         },
         key3: value3
     };
+```
 
 When an object literal is passed to a function, the opening brace should be on the same
 line as if the value is a variable. All other formatting rules listed earlier still apply.
 
+```javascript
     // Good
     doSomething({
         key1: value1,
@@ -249,6 +268,7 @@ line as if the value is a variable. All other formatting rules listed earlier st
 
     // Bad: All on one line
     doSomething({ key1: value1, key2: value2 });
+```
 
 ### Comments
 Make frequent use of comments to aid others in understanding your code. Use comments
