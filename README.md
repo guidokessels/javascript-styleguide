@@ -74,9 +74,17 @@ _Never_ use octal literals.
 ```javascript
 // Good
 var count = 10;
+
+// Good
 var price = 10.0;
+
+// Good
 var price = 10.00;
+
+// Good
 var num = 0xA2;
+
+// Good
 var num = 1e23;
 
 // Bad: Hanging decimal point
