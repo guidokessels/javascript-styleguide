@@ -1,7 +1,7 @@
 # JavaScript Style Guide
 
-> "Programs are meant to be read by humans, and only incidentally for computers 
-> to execute." - _Donald Knuth_
+> "Programs are meant to be read by humans, and only incidentally for computers to execute."
+> - _Donald Knuth_
 
 A style guide is a set of standards for the writing and design of code.
  
@@ -23,6 +23,27 @@ code more readable, and thus more easier to maintain.
 
 ## Style Guide
 
+- [Indentation](#indentation)
+- [Line Length](#line-length)
+- [Primitive Literals](#primitive-literals)
+- [Operator Spacing](#operator-spacing)
+- [Parentheses Spacing](#parentheses-spacing)
+- [Object Literals](#object-literals)
+- [Comments](#comments)
+    - [Single-Line Comments](#single-line-comments)
+    - [Multiline Comments](#multiline-comments)
+    - [Comment Annotations](#comment-annotations)
+- [Variable Declarations](#variable-declarations)
+- [Function Declarations](#function-declarations)
+- [Naming](#naming)
+- [Strict Mode](#strict-mode)
+- [Assignments](#assignments)
+- [Equality Operators](#equality-operators)
+- [Ternary Operators](#ternary-operators)
+- [Statements](#statements)
+- [White Space](#white-space)
+- [Things To Avoid](#things-to avoid)
+
 ### Indentation
 Each indentation level is made up of four spaces. No tabs.
 
@@ -32,6 +53,8 @@ if (true) {
     doSomething();
 }
 ```
+
+[&uarr; Back to top](#style-guide)
 
 ### Line Length
 Each line should be no longer than 100 characters. If a line goes longer than 100 characters, it 
@@ -51,6 +74,8 @@ doSomething(argument1, argument2, argument3, argument4,
 doSomething(argument1, argument2, argument3, argument4
     , argument5);
 ```
+
+[&uarr; Back to top](#style-guide)
 
 ### Primitive Literals
 String should always use single quotes and should always be on a single line.
@@ -154,6 +179,8 @@ if (variable == undefined) {
 }
 ```
 
+[&uarr; Back to top](#style-guide)
+
 ### Operator Spacing
 Operators with two operands must be preceded and followed by a single space to make
 the expression clear. Operators include assignments and logical operators.
@@ -186,6 +213,8 @@ for (i=0; i<count; i++) {
 }
 ```
 
+[&uarr; Back to top](#style-guide)
+
 ### Parentheses Spacing
 When parentheses are used, there should be no white space immediately after the
 opening paren or immediately before the closing paren.
@@ -217,6 +246,8 @@ for (i = 0; i < count; i++) {
     process( i );
 }
 ```
+
+[&uarr; Back to top](#style-guide)
 
 ### Object Literals
 Object literals should have the following format:
@@ -278,6 +309,8 @@ doSomething({
 doSomething({ key1: value1, key2: value2 });
 ```
 
+[&uarr; Back to top](#style-guide)
+
 ### Comments
 Make frequent use of comments to aid others in understanding your code. Use comments
 when:
@@ -288,45 +321,72 @@ when:
 - Documentation generation is necessary for an object, method, or property (use appropriate 
 documentation comments).
 
+[&uarr; Back to top](#style-guide)
+
 #### Single-Line Comments
 TODO
+
+[&uarr; Back to top](#style-guide)
 
 #### Multiline Comments
 TODO
 
+[&uarr; Back to top](#style-guide)
+
 #### Comment Annotations
 TODO
+
+[&uarr; Back to top](#style-guide)
 
 ### Variable Declarations
 TODO
 
+[&uarr; Back to top](#style-guide)
+
 ### Function Declarations
 TODO
+
+[&uarr; Back to top](#style-guide)
 
 ### Naming
 TODO
 
+[&uarr; Back to top](#style-guide)
+
 ### Strict Mode
 TODO
+
+[&uarr; Back to top](#style-guide)
 
 ### Assignments
 TODO
 
+[&uarr; Back to top](#style-guide)
+
 ### Equality Operators
 TODO
+
+[&uarr; Back to top](#style-guide)
 
 ### Ternary Operators
 TODO
 
+[&uarr; Back to top](#style-guide)
+
 ### Statements
 TODO
+
+[&uarr; Back to top](#style-guide)
 
 ### White Space
 TODO
 
+[&uarr; Back to top](#style-guide)
+
 ### Things To Avoid
 TODO
 
+[&uarr; Back to top](#style-guide)
 
 ## Sources
 
