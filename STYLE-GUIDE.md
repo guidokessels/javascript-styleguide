@@ -1,7 +1,7 @@
 # JavaScript Style Guide
 
 > "Programs are meant to be read by humans, and only incidentally for computers to execute."
-> - _Donald Knuth_
+> \- _Donald Knuth_
 
 A style guide is a set of standards for the writing and design of code.
  
