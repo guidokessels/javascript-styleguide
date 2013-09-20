@@ -547,32 +547,285 @@ Always declare variables. Implied globals should not be used.
 [&uarr; Back to top](#style-guide)
 
 ### Function Declarations
-TODO
+Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the `Function` constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
+
+```javascript
+// Good
+function doSomething(arg1, arg2) {
+    return arg1 + arg2;
+}
+
+// Bad: Improper spacing of first line
+function doSomething (arg1, arg2){
+    return arg1 + arg2;
+}
+
+// Bad: Function expression
+var doSomething = function(arg1, arg2) {
+    return arg1 + arg2;
+};
+
+// Bad: Left brace on wrong line
+function doSomething(arg1, arg2)
+{
+    return arg1 + arg2;
+}
+
+// Bad: Using Function constructor
+var doSomething = new Function("arg1", "arg2", "return arg1 + arg2");
+```
+
+Functions declared inside of other functions should be declared immediately after the var statement.
+
+```javascript
+// Good
+function outer() {
+
+    var count = 10,
+        name = "Nicholas",
+        found = false,
+        empty;
+
+    function inner() {
+        // code
+    }
+
+    // code that uses inner()
+}
+
+// Bad: Inner function declared before variables 
+function outer() {
+    function inner() { 
+        // code
+    }
+    
+    var count
+        name = "Nicholas",
+        found = false,
+        empty;
+
+    // code that uses inner()
+}
+```
+
+Anonymous functions may be used for assignment of object methods or as arguments to other functions. There should be no space between the `function` keyword and the opening parenthesis.
+
+```javascript
+// Good
+object.method = function() {
+    // code
+};
+
+// Bad: Incorrect spacing 
+object.method = function () {
+    // code
+};
+```
+
+Immediately invoked functions should surround the entire function call with paren- theses.
+
+```javascript
+// Good
+var value = (function() {
+    
+    // function body
+    
+    return {
+        message: "Hi"
+    }
+}());
+
+// Bad: No parentheses around function call 
+var value = function() {
+    
+    // function body
+    
+    return {
+        message: "Hi"
+    }
+}();
+
+// Bad: Improper parentheses placement 
+var value = (function() {
+    
+    // function body
+    
+    return {
+        message: "Hi"
+    }
+})();
+```
 
 [&uarr; Back to top](#style-guide)
 
 ### Naming
-TODO
+Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
+
+Variable names should be formatted in camel case with the first letter lowercase and the first letter of each subsequent word uppercase. The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. Do not use underscores in variable names.
+
+```javascript
+// Good
+var accountNumber = "8401-1";
+
+// Bad: Begins with uppercase letter
+var AccountNumber = "8401-1";
+
+// Bad: Begins with verb
+var getAccountNumber = "8401-1";
+
+// Bad: Uses underscore
+var account_number = "8401-1";
+```
+
+Function names should also be formatted using camel case. The first word of a function name should be a verb (not a noun) to avoid confusion with variables. Do not use underscores in function names.
+
+```javascript
+// Good
+function doSomething() {
+    // code
+}
+
+// Bad: Begins with uppercase letter
+function DoSomething() {
+    // code
+}
+
+// Bad: Begins with noun
+function car() {
+    // code
+}
+
+// Bad: Uses underscores
+function do_something() {
+    // code
+}
+```
+
+Constructor functions -functions used with the `new` operator to create new objects— should be formatted in camel case but must begin with an uppercase letter. Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
+
+```javascript
+// Good
+function MyObject() {
+    // code
+}
+
+// Bad: Begins with lowercase letter
+function myObject() {
+    // code
+}
+
+// Bad: Uses underscores
+function My_Object() {
+    // code
+}
+
+// Bad: Begins with verb
+function getMyObject() {
+    // code
+}
+```
+
+Variables that act as constants (values that won’t be changed) should be formatted using all uppercase letters with words separated by a single underscore.
+
+```javascript
+// Good
+var TOTAL_COUNT = 10;
+
+// Bad: Camel case
+var totalCount = 10;
+
+// Bad: Mixed case
+var total_COUNT = 10;
+```
+
+Object properties follow the same naming conventions as variables. Object methods follow the same naming conventions as functions. If a property or method is meant to be private, then it should be prefixed with an underscore character.
+
+```javascript
+// Good
+var object = {
+    _count: 10,
+
+    _getCount: function () {
+        return this._count;
+    }
+};
+```
 
 [&uarr; Back to top](#style-guide)
 
 ### Strict Mode
-TODO
+Strict mode should be used only inside of functions, never globally.
+
+```javascript
+// Bad: Global strict mode
+"use strict";
+
+function doSomething() {
+    // code
+}
+
+// Good
+function doSomething() {
+    "use strict";
+    // code
+}
+```
+
+If you want strict mode to apply to multiple functions without needing to write `"use strict"` multiple times, use immediate function invocation:
+
+```javascript
+// Good
+(function() {
+    "use strict";
+
+    function doSomething() {
+        // code
+    }
+
+    function doSomethingElse() {
+        // code
+    }
+}());
+```
 
 [&uarr; Back to top](#style-guide)
 
 ### Assignments
-TODO
+When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
+
+```javascript
+// Good
+var flag = (i < count);
+
+// Bad: Missing parentheses
+var flag = i < count;
+```
 
 [&uarr; Back to top](#style-guide)
 
 ### Equality Operators
-TODO
+Use `===` and `!==` instead of `==` and `!=` to avoid type coercion errors.
+
+```javascript
+// Good
+var same = (a === b);
+
+// Bad: Using ==
+var same = (a == b);
+```
 
 [&uarr; Back to top](#style-guide)
 
 ### Ternary Operators
-TODO
+The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
+
+```javascript
+// Good
+var value = condition ? value1 : value2;
+
+// Bad: no assignment, should be an if statement 
+condition ? doSomething() : doSomethingElse();
+```
 
 [&uarr; Back to top](#style-guide)
 
