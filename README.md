@@ -841,42 +841,241 @@ condition ? doSomething() : doSomethingElse();
 ### Statements
 
 #### Simple Statements
-TODO
+Each line should contain at most one statement. All simple statements should end with a semicolon (`;`).
+
+```javascript
+// Good 
+count++; 
+a = b;
+
+// Bad: Multiple statements on one line 
+count++; a = b;
+```
 
 #### `return` Statement
-TODO
+A `return` statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
+
+```javascript
+return;
+
+return collection.size();
+
+return (size > 0 ? size : defaultSize);
+```
 
 #### Compound Statements
-TODO
+Compound statements are lists of statements enclosed inside of braces.
+
+- The enclosed statements should be indented one more level than the compound statement.
+- The opening brace should be at the end of the line that begins the compound statement; the closing brace should begin a line and be indented to the beginning of the compound statement.
+- Braces are used around all statements, even single statements, when they are part of a control structure, such as an `if` or `for` statement. This convention makes it easier to add statements without accidentally introducing bugs by forgetting to add braces.
+- The statement beginning keyword, such as `if`, should be followed by one space, and the opening brace should be preceded by a space.
 
 #### `if` Statement
-TODO
+The if class of statements should have the following form:
+
+```javascript
+if (condition) {
+    statements
+}
+
+if (condition) {
+    statements
+} else {
+    statements
+}
+
+if (condition) { 
+    statements
+} else if (condition) { 
+    statements
+} else { 
+    statements
+}
+```
+
+It is never permissible to omit the braces in any part of an if statement.
+
+```javascript
+// Good
+if (condition) {
+    doSomething();
+}
+
+// Bad: Improper spacing 
+if(condition){
+    doSomething();
+}
+
+// Bad: Missing braces 
+if (condition)
+    doSomething();
+
+// Bad: All on one line
+if (condition) { doSomething(); }
+
+// Bad: All on one line without braces 
+if (condition) doSomething();
+```
 
 #### `for` Statement
-TODO
+The for class of statements should have the following form:
+
+```javascript
+for (initialization; condition; update) {
+    statements
+}
+
+for (variable in object) {
+    statements
+}
+```
+
+Variables should not be declared in the initialization section of a `for` statement.
+
+```javascript
+// Good 
+var i,
+    len;
+
+for (i=0, len=10; i < len; i++) {
+    // code
+}
+
+// Bad: Variables declared during initialization 
+for (var i=0, len=10; i < len; i++) {
+    // code 
+}
+
+// Bad: Variables declared during initialization 
+for (var prop in object) {
+    // code 
+}
+```
+
+When using a `for-in` statement, double-check if you need to use `hasOwnProperty()` to filter out object members.
 
 #### `while` Statement
-TODO
+The `while` class of statements should have the following form:
+
+```javascript
+while (condition) {
+    statements
+}
+```
 
 #### `do` Statement
-TODO
+The `do` class of statements should have the following form:
+
+```javascript
+do {
+    statements
+} while (condition);
+```
+
+Note the use of a semicolon as the final part of this statement. There should be a space before and after the `while` keyword.
 
 #### `switch` Statement
-TODO
+The `switch` class of statements should have the following form:
+
+```javascript
+switch (expression) {
+    case expression:
+        statements
+
+    default: 
+        statements
+}
+```
+
+Each `case` is indented one level under the `switch`. Each case after the first, including `default`, should be preceded by a single empty line.
+
+Each group of statements (except the default) should end with `break`, `return`, `throw`, or a comment indicating fall-through.
+
+```javascript
+// Good
+switch (value) {
+    case 1:
+        // falls through
+
+    case 2:
+        doSomething();
+        break;
+
+    case 3:
+        return true;
+
+    default:
+        throw new Error("This shouldn't happen.);
+}
+```
+
+If a switch doesn’t have a `default` case, then it should be indicated with a comment.
+
+```javascript
+// Good
+switch (value) {
+    case 1:
+        // falls through
+
+    case 2: doSomething();
+        break;
+
+    case 3:
+        return true;
+
+    // no default
+}
+```
 
 #### `try` Statement
-TODO
+The `try` class of statements should have the following form:
 
+```javascript
+try {
+    statements
+} catch (variable) {
+    statements
+}
+
+try {
+    statements
+} catch (variable) {
+    statements
+} finally {
+    statements
+}
+```
 
 [&uarr; Back to top](#style-guide)
 
 ### White Space
-TODO
+Blank lines improve readability by setting off sections of code that are logically related. Two blank lines should always be used in the following circumstances:
+
+- Between sections of a source file
+- Between class and interface definitions
+
+One blank line should always be used in the following circumstances:
+
+- Between methods
+- Between the local variables in a method and its first statement
+- Before a multiline or single-line comment
+- Between logical sections inside a method to improve readability
+
+Blank spaces should be used in the following circumstances:
+
+- A keyword followed by a parenthesis should be separated by a space.
+- A blank space should appear after commas in argument lists.
+- All binary operators except dot (`.`) should be separated from their operands by spaces. Blank spaces should never separate unary operators such as unary minus, increment (`++`), and decrement (`--`) from their operands.
+- The expressions in a `for` statement should be separated by blank spaces.
 
 [&uarr; Back to top](#style-guide)
 
 ### Things To Avoid
-TODO
+
+- Never use the primitive wrapper types, such as `String`, to create new objects.
+- Never use `eval()`.
+- Never use the `with` statement. This statement isn’t available in strict mode and likely won’t be available in future ECMAScript editions.
 
 [&uarr; Back to top](#style-guide)
 
