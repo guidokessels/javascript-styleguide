@@ -450,7 +450,7 @@ var result = something + somethingElse;    /*somethingElse will never be null*/
 [&uarr; Back to top](#style-guide)
 
 #### Comment Annotations
-Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable anno- tations are:
+Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
 
 - TODO
 - HACK
@@ -631,7 +631,7 @@ object.method = function () {
 };
 ```
 
-Immediately invoked functions should surround the entire function call with paren- theses.
+Immediately invoked functions should surround the entire function call with parentheses.
 
 ```javascript
 // Good
