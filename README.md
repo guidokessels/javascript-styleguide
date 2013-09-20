@@ -503,7 +503,46 @@ if (document.all) {
 [&uarr; Back to top](#style-guide)
 
 ### Variable Declarations
-TODO
+All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single var statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
+
+```javascript
+// Good
+var count   = 10,
+    name    = "Nicholas",
+    found   = false, 
+    empty;
+
+// Bad: Improper initialization alignment
+var count = 10,
+    name = "Nicholas",
+    found= false,
+    empty;
+
+// Bad: Incorrect indentation
+var count = 10,
+name = "Nicholas",
+found = false,
+empty;
+
+// Bad: Multiple declarations on one line
+var count = 10, name = "Nicholas",
+    found = false, empty;
+
+// Bad: Uninitialized variables first 
+var empty,
+    count   = 10,
+    name    = "Nicholas",
+    found   = false;
+
+// Bad: Multiple var statements 
+var count   = 10,
+    name    = "Nicholas";
+
+var found   = false,
+    empty;
+```
+
+Always declare variables. Implied globals should not be used.
 
 [&uarr; Back to top](#style-guide)
 
