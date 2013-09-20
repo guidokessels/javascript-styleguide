@@ -1,6 +1,23 @@
 # JavaScript Style Guide
 
-> "Programs are meant to be read by humans, and only incidentally for computers 
-> to execute." - _Donald Knuth_
+This is the home of the Spil Games JavaScript Style Guide, and related content.
 
-Future home of the Spil Games JavaScript Style Guide.
+## Table of Contents
+
+- [Style Guide](STYLE-GUIDE.md)
+- [Tools](TOOLS.md)
+
+## Goals
+
+The goals of this repository:
+
+- Clear overview of rules
+    - Commonly-agreed upon standards
+    - Living document
+- Introduce & document tools, such as:
+    - Style checker
+        - Verify if code adheres to style guide
+        - Runs via command line + integrated in build process
+        - Runs in editor (SublimeText, etc.)
+    - Provide `.editorconfig` (see [editorconfig.org](http://editorconfig.org))
+    - Style fixer: Automatically fix code (e.g., via [CodePainter](https://github.com/fawek/codepainter))
