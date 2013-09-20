@@ -42,7 +42,7 @@ code more readable, and thus more easier to maintain.
 - [Ternary Operators](#ternary-operators)
 - [Statements](#statements)
 - [White Space](#white-space)
-- [Things To Avoid](#things-to avoid)
+- [Things To Avoid](#things-to-avoid)
 
 ### Indentation
 Each indentation level is made up of four spaces. No tabs.
@@ -78,7 +78,7 @@ doSomething(argument1, argument2, argument3, argument4
 [&uarr; Back to top](#style-guide)
 
 ### Primitive Literals
-String should always use single quotes and should always be on a single line.
+Strings should always use single quotes and should always be on a single line.
 
 ```javascript
 // Good
@@ -92,7 +92,7 @@ var longString = 'This is a string spanning \
 multiple lines.';
 ```
 
-Number should be written as decimal integers, e-notation integers, hexadecimal integers, or 
+Numbers should be written as decimal integers, e-notation integers, hexadecimal integers, or 
 floating-point decimals with at least one digit before and one digit after the decimal point. 
 _Never_ use octal literals.
 
@@ -138,7 +138,7 @@ var person = null;
 // Good
 function getPerson() {
     if (condition) {
-        return new Person("Nicholas");
+        return new Person("John");
     } else {
         return null;
     }
@@ -169,12 +169,12 @@ operator:
 
 ```javascript
 // Good
-if (typeof variable == "undefined") {
+if (typeof variable === "undefined") {
     // do something
 }
 
 // Bad: Using undefined literal
-if (variable == undefined) {
+if (variable === undefined) {
     // do something
 }
 ```
@@ -324,17 +324,181 @@ documentation comments).
 [&uarr; Back to top](#style-guide)
 
 #### Single-Line Comments
-TODO
+Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
+
+- On a separate line, describing the code beneath it
+- At the end of a line, describing the code before it
+- On multiple lines, to comment out sections of code
+
+When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. Never use multiple single-line comments on consecutive lines; use a multiline comment instead.
+
+```javascript
+// Good
+if (condition){
+
+    // if you made it here, then all security checks passed
+    allowed();
+}
+
+// Bad: No empty line preceding comment
+if (condition){
+    // if you made it here, then all security checks passed
+    allowed();
+}
+
+// Bad: Wrong indentation 
+if (condition){
+// if you made it here, then all security checks passed
+    allowed();
+}
+
+// Bad: This should be a multiline comment
+// This next piece of code is quite difficult, so let me explain.
+// What you want to do is determine if the condition is true
+// and only then allow the user in. The condition is calculated
+// from several different functions and may change during the
+// lifetime of the session.
+if (condition){
+    // if you made it here, then all security checks passed
+    allowed();
+}
+```
+
+For single-line comments at the end of a line, ensure that there is at least one indentation level between the end of the code and the beginning of the comment:
+
+```javascript
+// Good
+var result = something + somethingElse;    // somethingElse will never be null
+
+// Bad: Not enough space between code and comment
+var result = something + somethingElse;// somethingElse will never be null
+```
+
+The only acceptable time to have multiple single-line comments on successive lines is to comment out large sections of code. Multiline comments should not be used for this purpose.
+
+```javascript
+// Good
+// if (condition){
+//     doSomething();
+//     thenDoSomethingElse();
+// }
+```
 
 [&uarr; Back to top](#style-guide)
 
 #### Multiline Comments
-TODO
+Multiline comments should be used to document code that requires more explanation. Each multiline comment should have at least three lines:
+
+1. The first line contains only the `/*` comment opening. No further text is allowed on this line.
+2. The next line or lines have a `*` aligned with the `*` in the first line. Text is allowed on these lines.
+3. The last line has the `*/` comment opening aligned with the preceding lines. No other text is allowed on this line.
+
+The first line of multiline comments should be indented to the same level as the code it describes. Each subsequent line should have the same indentation plus one space (for proper alignment of the `*` characters). Each multiline comment should be preceded by one empty line.
+
+```javascript
+// Good
+if (condition){
+
+    /*
+     * if you made it here,
+     * then all security checks passed
+     */
+    allowed();
+}
+
+// Bad: No empty line preceding comment
+if (condition){
+    /*
+     * if you made it here,
+     * then all security checks passed
+     */
+    allowed();
+}
+
+// Bad: Missing a space after asterisk 
+if (condition){
+
+    /*
+     *if you made it here,
+     *then all security checks passed
+     */
+    allowed();
+}
+
+// Bad: Wrong indentation
+if (condition){
+/*
+ * if you made it here,
+ * then all security checks passed
+ */
+    allowed();
+}
+
+// Bad: Don't use multi-line comments for trailing comments
+var result = something + somethingElse;    /*somethingElse will never be null*/
+```
 
 [&uarr; Back to top](#style-guide)
 
 #### Comment Annotations
-TODO
+Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable anno- tations are:
+
+- TODO
+- HACK
+- XXX
+- FIXME
+- REVIEW
+
+##### TODO
+Indicates that the code is not yet complete. Information about the next steps should be included.
+
+##### HACK
+Indicates that the code is using a shortcut. Information about why the hack is being used should be included. This may also indicate that it would be nice to come up with a better way to solve the problem.
+
+##### XXX
+Indicates that the code is problematic and should be fixed as soon as possible.
+
+##### FIXME
+Indicates that the code is problematic and should be fixed soon. Less important than ```XXX```.
+
+##### REVIEW
+Indicates that the code needs to be reviewed for potential changes.
+
+These annotations may be used with either single-line or multiline comments and should follow the same formatting rules as the general comment type.
+
+Examples:
+
+```javascript
+// Good
+// TODO: I'd like to find a way to make this faster
+doSomething();
+
+// Good
+/*
+ * HACK: Have to do this for IE. I plan on revisiting in
+ * the future when I have more time. This probably should
+ * get replaced before v1.2.
+ */
+if (document.all) {
+    doSomething();
+}
+
+// Good
+// REVIEW: Is there a better way to do this? 
+if (document.all) {
+    doSomething();
+}
+
+// Bad: Annotation spacing is incorrect
+// TODO : I'd like to find a way to make this faster
+doSomething();
+
+// Bad: Comment should be at the same indentation as code 
+    // REVIEW: Is there a better way to do this?
+if (document.all) {
+    doSomething();
+}
+```
 
 [&uarr; Back to top](#style-guide)
 
