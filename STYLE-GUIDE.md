@@ -505,35 +505,35 @@ All variables should be declared before they are used. Variable declarations sho
 ```javascript
 // Good
 var count   = 10,
-    name    = "Nicholas",
+    name    = "SpilGames",
     found   = false, 
     empty;
 
 // Bad: Improper initialization alignment
 var count = 10,
-    name = "Nicholas",
+    name = "SpilGames",
     found= false,
     empty;
 
 // Bad: Incorrect indentation
 var count = 10,
-name = "Nicholas",
+name = "SpilGames",
 found = false,
 empty;
 
 // Bad: Multiple declarations on one line
-var count = 10, name = "Nicholas",
+var count = 10, name = "SpilGames",
     found = false, empty;
 
 // Bad: Uninitialized variables first 
 var empty,
     count   = 10,
-    name    = "Nicholas",
+    name    = "SpilGames",
     found   = false;
 
 // Bad: Multiple var statements 
 var count   = 10,
-    name    = "Nicholas";
+    name    = "SpilGames";
 
 var found   = false,
     empty;
@@ -579,7 +579,7 @@ Functions declared inside of other functions should be declared immediately afte
 function outer() {
 
     var count = 10,
-        name = "Nicholas",
+        name = "SpilGames",
         found = false,
         empty;
 
@@ -596,8 +596,8 @@ function outer() {
         // code
     }
     
-    var count
-        name = "Nicholas",
+    var count,
+        name = "SpilGames",
         found = false,
         empty;
 
