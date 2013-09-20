@@ -41,6 +41,15 @@ code more readable, and thus more easier to maintain.
 - [Equality Operators](#equality-operators)
 - [Ternary Operators](#ternary-operators)
 - [Statements](#statements)
+    - [Simple Statements](#simple-statements)
+    - [`return` Statement](#return-statement)
+    - [Compound Statements](#compound-statements)
+    - [`if` Statement](#if-statement)
+    - [`for` Statement](#for-statement)
+    - [`while` Statement](#while-statement)
+    - [`do` Statement](#do-statement)
+    - [`switch` Statement](#switch-statement)
+    - [`try` Statement](#try-statement)
 - [White Space](#white-space)
 - [Things To Avoid](#things-to-avoid)
 
@@ -830,7 +839,34 @@ condition ? doSomething() : doSomethingElse();
 [&uarr; Back to top](#style-guide)
 
 ### Statements
+
+#### Simple Statements
 TODO
+
+#### `return` Statement
+TODO
+
+#### Compound Statements
+TODO
+
+#### `if` Statement
+TODO
+
+#### `for` Statement
+TODO
+
+#### `while` Statement
+TODO
+
+#### `do` Statement
+TODO
+
+#### `switch` Statement
+TODO
+
+#### `try` Statement
+TODO
+
 
 [&uarr; Back to top](#style-guide)
 
