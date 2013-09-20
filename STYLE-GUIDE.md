@@ -9,18 +9,6 @@ The goal of a style guide is that all code in any code-base should look like a s
 it, even when many people are contributing to it. Consistency in code style and formatting makes 
 code more readable, and thus more easier to maintain. 
 
-## Goals
-
-- Clear overview of rules
-    - Commonly-agreed upon standards
-    - Living document
-- Style checker
-    - Verify if style is correct
-    - Runs via command line, integrated in build process
-    - Run in editor (SublimeText, etc.)
-    - Provide .editorconfig
-- Style fixer: Automatically fix code (e.g., via CodePainter)
-
 ## Style Guide
 
 - [Indentation](#indentation)
