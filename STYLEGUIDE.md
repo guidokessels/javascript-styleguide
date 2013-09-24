@@ -688,10 +688,11 @@ line as if the value is a variable. All other formatting rules listed earlier st
 - Names should be limited to alphanumeric characters and, in some cases, the underscore character.
 - Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
 
-- Variables
-    - Variable names should be formatted in **CamelCase**
-    - The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. 
-    - Do not use underscores in variable names.
+### Variables
+
+- Variable names should be formatted in **CamelCase**
+- The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. 
+- Do not use underscores in variable names.
 
     ```javascript
     // Good
@@ -707,10 +708,11 @@ line as if the value is a variable. All other formatting rules listed earlier st
     var account_number = "8401-1";
     ```
 
-- Functions 
-    - Function names should also be formatted using **CamelCase**. 
-    - The first word of a function name should be a verb (not a noun) to avoid confusion with variables.
-    - Do not use underscores in function names.
+### Functions 
+
+- Function names should also be formatted using **CamelCase**. 
+- The first word of a function name should be a verb (not a noun) to avoid confusion with variables.
+- Do not use underscores in function names.
 
     ```javascript
     // Good
@@ -734,10 +736,11 @@ line as if the value is a variable. All other formatting rules listed earlier st
     }
     ```
 
-- Constructor Functions
-    - Constructor functions are functions used with the `new` operator to create new objects
-    - Should be formatted in **PascalCase**.
-    - Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
+### Constructor Functions
+
+- Constructor functions are functions used with the `new` operator to create new objects
+- Should be formatted in **PascalCase**.
+- Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
 
     ```javascript
     // Good
@@ -761,8 +764,9 @@ line as if the value is a variable. All other formatting rules listed earlier st
     }
     ```
 
-- Constants
-    - Variables that act as constants (values that won’t be changed) should be formatted using all uppercase letters, with words separated by a single underscore.
+### Constants
+
+- Variables that act as constants (values that won’t be changed) should be formatted using all uppercase letters, with words separated by a single underscore.
 
     ```javascript
     // Good
@@ -775,10 +779,11 @@ line as if the value is a variable. All other formatting rules listed earlier st
     var total_COUNT = 10;
     ```
 
-- Object properties and methods
-    - Object properties follow the same naming conventions as variables.
-    - Object methods follow the same naming conventions as functions.
-    - If a property or method is meant to be private, then it should be prefixed with an single underscore character.
+### Object properties and methods
+
+- Object properties follow the same naming conventions as variables.
+- Object methods follow the same naming conventions as functions.
+- If a property or method is meant to be private, then it should be prefixed with an single underscore character.
 
     ```javascript
     // Good
