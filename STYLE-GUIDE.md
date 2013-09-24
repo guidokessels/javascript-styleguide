@@ -51,7 +51,7 @@ if (true) {
 }
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Line Length
 Each line should be no longer than 100 characters. If a line goes longer than 100 characters, it 
@@ -72,7 +72,7 @@ doSomething(argument1, argument2, argument3, argument4
     , argument5);
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Primitive Literals
 Strings should always use single quotes and should always be on a single line.
@@ -176,7 +176,7 @@ if (variable === undefined) {
 }
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Operator Spacing
 Operators with two operands must be preceded and followed by a single space to make
@@ -210,7 +210,7 @@ for (i=0; i<count; i++) {
 }
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Parentheses Spacing
 When parentheses are used, there should be no white space immediately after the
@@ -244,7 +244,7 @@ for (i = 0; i < count; i++) {
 }
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Object Literals
 Object literals should have the following format:
@@ -306,7 +306,7 @@ doSomething({
 doSomething({ key1: value1, key2: value2 });
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Comments
 Make frequent use of comments to aid others in understanding your code. Use comments
@@ -318,7 +318,7 @@ when:
 - Documentation generation is necessary for an object, method, or property (use appropriate 
 documentation comments).
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 #### Single-Line Comments
 Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
@@ -381,7 +381,7 @@ The only acceptable time to have multiple single-line comments on successive lin
 // }
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 #### Multiline Comments
 Multiline comments should be used to document code that requires more explanation. Each multiline comment should have at least three lines:
@@ -435,7 +435,7 @@ if (condition){
 var result = something + somethingElse;    /*somethingElse will never be null*/
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 #### Comment Annotations
 Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
@@ -497,7 +497,7 @@ if (document.all) {
 }
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Variable Declarations
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single var statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
@@ -505,35 +505,35 @@ All variables should be declared before they are used. Variable declarations sho
 ```javascript
 // Good
 var count   = 10,
-    name    = "SpilGames",
+    name    = "Nicholas",
     found   = false, 
     empty;
 
 // Bad: Improper initialization alignment
 var count = 10,
-    name = "SpilGames",
+    name = "Nicholas",
     found= false,
     empty;
 
 // Bad: Incorrect indentation
 var count = 10,
-name = "SpilGames",
+name = "Nicholas",
 found = false,
 empty;
 
 // Bad: Multiple declarations on one line
-var count = 10, name = "SpilGames",
+var count = 10, name = "Nicholas",
     found = false, empty;
 
 // Bad: Uninitialized variables first 
 var empty,
     count   = 10,
-    name    = "SpilGames",
+    name    = "Nicholas",
     found   = false;
 
 // Bad: Multiple var statements 
 var count   = 10,
-    name    = "SpilGames";
+    name    = "Nicholas";
 
 var found   = false,
     empty;
@@ -541,7 +541,7 @@ var found   = false,
 
 Always declare variables. Implied globals should not be used.
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Function Declarations
 Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the `Function` constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
@@ -579,7 +579,7 @@ Functions declared inside of other functions should be declared immediately afte
 function outer() {
 
     var count = 10,
-        name = "SpilGames",
+        name = "Nicholas",
         found = false,
         empty;
 
@@ -596,8 +596,8 @@ function outer() {
         // code
     }
     
-    var count,
-        name = "SpilGames",
+    var count
+        name = "Nicholas",
         found = false,
         empty;
 
@@ -653,7 +653,7 @@ var value = (function() {
 })();
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Naming
 Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
@@ -748,7 +748,7 @@ var object = {
 };
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Strict Mode
 Strict mode should be used only inside of functions, never globally.
@@ -785,7 +785,7 @@ If you want strict mode to apply to multiple functions without needing to write 
 }());
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Assignments
 When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
@@ -798,7 +798,7 @@ var flag = (i < count);
 var flag = i < count;
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Equality Operators
 Use `===` and `!==` instead of `==` and `!=` to avoid type coercion errors.
@@ -811,7 +811,7 @@ var same = (a === b);
 var same = (a == b);
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Ternary Operators
 The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
@@ -824,7 +824,7 @@ var value = condition ? value1 : value2;
 condition ? doSomething() : doSomethingElse();
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Statements
 
@@ -1035,7 +1035,7 @@ try {
 }
 ```
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### White Space
 Blank lines improve readability by setting off sections of code that are logically related. Two blank lines should always be used in the following circumstances:
@@ -1057,7 +1057,7 @@ Blank spaces should be used in the following circumstances:
 - All binary operators except dot (`.`) should be separated from their operands by spaces. Blank spaces should never separate unary operators such as unary minus, increment (`++`), and decrement (`--`) from their operands.
 - The expressions in a `for` statement should be separated by blank spaces.
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ### Things To Avoid
 
@@ -1065,7 +1065,7 @@ Blank spaces should be used in the following circumstances:
 - Never use `eval()`.
 - Never use the `with` statement. This statement isn’t available in strict mode and likely won’t be available in future ECMAScript editions.
 
-[&uarr; Back to top](#style-guide)
+**[[⬆]](#style-guide)**
 
 ## Sources
 
