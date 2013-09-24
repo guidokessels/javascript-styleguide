@@ -15,6 +15,10 @@ code more readable, and thus more easier to maintain.
     - [Indentation](#indentation)
     - [Line Length](#line-length)
     - [Primitive Literals](#primitive-literals)
+        - [Strings](#strings)
+        - [Numbers](#numbers)
+        - [`null`](#null)
+        - [`undefined`](#undefined)
     - [Operator Spacing](#operator-spacing)
     - [Parentheses Spacing](#parentheses-spacing)
     - [Object Literals](#object-literals)
@@ -108,7 +112,8 @@ code more readable, and thus more easier to maintain.
 #### Numbers
 
 - Numbers should be written as decimal integers, e-notation integers, hexadecimal integers, or 
-floating-point decimals with at least one digit before and one digit after the decimal point. 
+floating-point decimals.
+- Floating-point decimals need to have at least one digit before and one digit after the decimal point.
 - _Never_ use octal literals.
 
     ```javascript
@@ -184,17 +189,17 @@ floating-point decimals with at least one digit before and one digit after the d
 
 #### `undefined`
 
-- Never use the special value `undefined`. To see if a variable has been defined, use the `typeof`
-operator:
+- Never use the special value `undefined`. 
+- To see if a variable has been defined, use the `typeof` operator:
 
     ```javascript
     // Good
-    if (typeof variable === "undefined") {
+    if ("undefined" === typeof variable) {
         // do something
     }
 
     // Bad: Using undefined literal
-    if (variable === undefined) {
+    if (undefined === variable) {
         // do something
     }
     ```
