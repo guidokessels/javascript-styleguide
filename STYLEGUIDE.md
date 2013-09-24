@@ -356,7 +356,7 @@ line as if the value is a variable. All other formatting rules listed earlier st
     - On a separate line, describing the code beneath it
     - At the end of a line, describing the code before it
     - On multiple lines, to comment out sections of code
-- When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. \
+- When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line.
 - Never use multiple single-line comments on consecutive lines; use a [multiline comment](#multiline-comments) instead.
 
     ```javascript
@@ -523,6 +523,7 @@ line as if the value is a variable. All other formatting rules listed earlier st
 - All lines after the first should be indented one level so that the variable names line up. 
 - Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level.
 - Initialized variables should come first, followed by uninitialized variables.
+- Always declare variables. Implied globals should __not__ be used.
 
     ```javascript
     // Good
@@ -561,119 +562,123 @@ line as if the value is a variable. All other formatting rules listed earlier st
         empty;
     ```
 
-Always declare variables. Implied globals should not be used.
-
 **[[⬆]](#style-guide)**
 
 ## Function Declarations
-Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the `Function` constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 
-```javascript
-// Good
-function doSomething(arg1, arg2) {
-    return arg1 + arg2;
-}
+- Functions should be declared before they are used.
+- When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the `Function` constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
+- Function declarations should have the following format:
 
-// Bad: Improper spacing of first line
-function doSomething (arg1, arg2){
-    return arg1 + arg2;
-}
+    ```javascript
+    // Good
+    function doSomething(arg1, arg2) {
+        return arg1 + arg2;
+    }
 
-// Bad: Function expression
-var doSomething = function(arg1, arg2) {
-    return arg1 + arg2;
-};
+    // Bad: Improper spacing of first line
+    function doSomething (arg1, arg2){
+        return arg1 + arg2;
+    }
 
-// Bad: Left brace on wrong line
-function doSomething(arg1, arg2)
-{
-    return arg1 + arg2;
-}
+    // Bad: Function expression
+    var doSomething = function(arg1, arg2) {
+        return arg1 + arg2;
+    };
 
-// Bad: Using Function constructor
-var doSomething = new Function("arg1", "arg2", "return arg1 + arg2");
-```
+    // Bad: Left brace on wrong line
+    function doSomething(arg1, arg2)
+    {
+        return arg1 + arg2;
+    }
 
-Functions declared inside of other functions should be declared immediately after the var statement.
+    // Bad: Using Function constructor
+    var doSomething = new Function("arg1", "arg2", "return arg1 + arg2");
+    ```
 
-```javascript
-// Good
-function outer() {
+- Functions declared inside of other functions should be declared immediately after the `var` statement:
 
-    var count = 10,
-        name = "Nicholas",
-        found = false,
-        empty;
+    ```javascript
+    // Good
+    function outer() {
 
-    function inner() {
+        var count = 10,
+            name = "Nicholas",
+            found = false,
+            empty;
+
+        function inner() {
+            // code
+        }
+
+        // code that uses inner()
+    }
+
+    // Bad: Inner function declared before variables 
+    function outer() {
+        function inner() { 
+            // code
+        }
+        
+        var count
+            name = "Nicholas",
+            found = false,
+            empty;
+
+        // code that uses inner()
+    }
+    ```
+
+- Anonymous functions may be used for assignment of object methods or as arguments to other functions:
+
+    ```javascript
+    // Good
+    object.method = function() {
         // code
-    }
+    };
 
-    // code that uses inner()
-}
-
-// Bad: Inner function declared before variables 
-function outer() {
-    function inner() { 
+    // Bad: Incorrect spacing 
+    object.method = function () {
         // code
-    }
-    
-    var count
-        name = "Nicholas",
-        found = false,
-        empty;
+    };
+    ```
 
-    // code that uses inner()
-}
-```
+- Immediately invoked functions should surround the entire function call with parentheses.
 
-Anonymous functions may be used for assignment of object methods or as arguments to other functions. There should be no space between the `function` keyword and the opening parenthesis.
+    ```javascript
+    // Good
+    var value = (function() {
+        
+        // function body
+        
+        return {
+            message: "Hi"
+        }
+    }());
 
-```javascript
-// Good
-object.method = function() {
-    // code
-};
+    // Bad: No parentheses around function call 
+    var value = function() {
+        
+        // function body
+        
+        return {
+            message: "Hi"
+        }
+    }();
 
-// Bad: Incorrect spacing 
-object.method = function () {
-    // code
-};
-```
+    // Bad: Improper parentheses placement 
+    var value = (function() {
+        
+        // function body
+        
+        return {
+            message: "Hi"
+        }
+    })();
+    ```
 
-Immediately invoked functions should surround the entire function call with parentheses.
-
-```javascript
-// Good
-var value = (function() {
-    
-    // function body
-    
-    return {
-        message: "Hi"
-    }
-}());
-
-// Bad: No parentheses around function call 
-var value = function() {
-    
-    // function body
-    
-    return {
-        message: "Hi"
-    }
-}();
-
-// Bad: Improper parentheses placement 
-var value = (function() {
-    
-    // function body
-    
-    return {
-        message: "Hi"
-    }
-})();
-```
+- Never name a parameter `arguments`
+- Never declare a function in a non-function block (`if`, `while`, etc.) Assign the function to a variable instead.
 
 **[[⬆]](#style-guide)**
 
