@@ -4,7 +4,7 @@ This is the home of the Spil Games JavaScript Style Guide, and related content.
 
 ## Table of Contents
 
-- [Style Guide](STYLE-GUIDE.md)
+- [Style Guide](STYLEGUIDE.md)
 - [Tools](TOOLS.md)
 
 ## Goals
