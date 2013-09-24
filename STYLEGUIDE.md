@@ -207,365 +207,359 @@ floating-point decimals.
 **[[⬆]](#style-guide)**
 
 ### Operator Spacing
-Operators with two operands must be preceded and followed by a single space to make
-the expression clear. Operators include assignments and logical operators.
 
-```javascript
-// Good
-var found = (values[i] === item);
+- Operators with two operands must be preceded and followed by a single space to make
+the expression clear. 
+- Operators include assignments and logical operators.
 
-// Good
-if (found && (count > 10)) {
-    doSomething();
-}
+    ```javascript
+    // Good
+    var found = (values[i] === item);
 
-// Good
-for (i = 0; i < count; i++) {
-    process(i);
-}
+    // Good
+    if (found && (count > 10)) {
+        doSomething();
+    }
 
-// Bad: Missing spaces
-var found = (values[i]===item);
+    // Good
+    for (i = 0; i < count; i++) {
+        process(i);
+    }
 
-// Bad: Missing spaces
-if (found&&(count>10)) {
-    doSomething();
-}
+    // Bad: Missing spaces
+    var found = (values[i]===item);
 
-// Bad: Missing spaces
-for (i=0; i<count; i++) {
-    process(i);
-}
-```
+    // Bad: Missing spaces
+    if (found&&(count>10)) {
+        doSomething();
+    }
+
+    // Bad: Missing spaces
+    for (i=0; i<count; i++) {
+        process(i);
+    }
+    ```
 
 **[[⬆]](#style-guide)**
 
 ### Parentheses Spacing
-When parentheses are used, there should be no white space immediately after the
-opening paren or immediately before the closing paren.
 
-```javascript
-// Good
-var found = (values[i] === item);
+- No white space immediately after the opening paren or immediately before the closing paren.
 
-// Good
-if (found && (count > 10)) {
-    doSomething();
-}
+    ```javascript
+    // Good
+    var found = (values[i] === item);
 
-// Good
-for (i = 0; i < count; i++) {
-    process(i);
-}
+    // Good
+    if (found && (count > 10)) {
+        doSomething();
+    }
 
-// Bad: Extra space after opening paren
-var found = ( values[i] === item);
+    // Good
+    for (i = 0; i < count; i++) {
+        process(i);
+    }
 
-// Bad: Extra space before closing paren
-if (found && (count > 10) ) {
-    doSomething();
-}
+    // Bad: Extra space after opening paren
+    var found = ( values[i] === item);
 
-// Bad: Extra space around argument
-for (i = 0; i < count; i++) {
-    process( i );
-}
-```
+    // Bad: Extra space before closing paren
+    if (found && (count > 10) ) {
+        doSomething();
+    }
+
+    // Bad: Extra space around argument
+    for (i = 0; i < count; i++) {
+        process( i );
+    }
+    ```
 
 **[[⬆]](#style-guide)**
 
 ### Object Literals
-Object literals should have the following format:
 
-- The opening brace should be on the same line as the containing statement.
-- Each property-value pair should be indented one level with the first property appearing on the 
-next line after the opening brace.
-- Each property-value pair should have an unquoted property name, followed by a colon (no space 
-preceding it), followed by the value.
-- If the value is a function, it should wrap under the property name and should have a blank line 
-both before and after the function.
-- Additional empty lines may be inserted to group related properties or otherwise improve 
-readability.
-- The closing brace should be on a separate line.
+- Object literals should have the following format:
+    - The opening brace should be on the same line as the containing statement.
+    - Each property-value pair should be indented one level, with the first property appearing on the 
+    next line after the opening brace.
+    - Each property-value pair should have an unquoted property name, followed by a colon (no space 
+    preceding it), followed by the value.
+    - If the value is a function, it should wrap under the property name and should have a blank line 
+    both before and after the function.
+    - Additional empty lines may be inserted to group related properties or otherwise improve 
+    readability.
+    - The closing brace should be on a separate line.
+- Examples:
 
-Examples:
+    ```javascript
+    // Good
+    var object = {
+        key1: value1,
+        key2: value2,
 
-```javascript
-// Good
-var object = {
-    key1: value1,
-    key2: value2,
+        func: function() {
+            // do something
+        },
 
-    func: function() {
-        // do something
-    },
+        key3: value3
+    };
 
-    key3: value3
-};
+    // Bad: Improper indentation
+    var object = {
+                    key1: value1,
+                    key2: value2
+                };
 
-// Bad: Improper indentation
-var object = {
-                key1: value1,
-                key2: value2
-            };
+    // Bad: Missing blank lines around function
+    var object = {
+        key1: value1,
+        key2: value2,
+        func: function() {
+            // do something
+        },
+        key3: value3
+    };
+    ```
 
-// Bad: Missing blank lines around function
-var object = {
-    key1: value1,
-    key2: value2,
-    func: function() {
-        // do something
-    },
-    key3: value3
-};
-```
-
-When an object literal is passed to a function, the opening brace should be on the same
+- When an object literal is passed to a function, the opening brace should be on the same
 line as if the value is a variable. All other formatting rules listed earlier still apply.
 
-```javascript
-// Good
-doSomething({
-    key1: value1,
-    key2: value2
-});
+    ```javascript
+    // Good
+    doSomething({
+        key1: value1,
+        key2: value2
+    });
 
-// Bad: All on one line
-doSomething({ key1: value1, key2: value2 });
-```
+    // Bad: All on one line
+    doSomething({ key1: value1, key2: value2 });
+    ```
 
 **[[⬆]](#style-guide)**
 
 ## Comments
-Make frequent use of comments to aid others in understanding your code. Use comments
-when:
 
-- Code is difficult to understand.
-- The code might be mistaken for an error.
-- Browser-specific code is necessary but not obvious.
-- Documentation generation is necessary for an object, method, or property (use appropriate 
-documentation comments).
+- Make frequent use of comments to aid others in understanding your code.
+- Use comments when:
+    - Code is difficult to understand.
+    - The code might be mistaken for an error.
+    - Browser-specific code is necessary but not obvious.
+    - Documentation generation is necessary for an object, method, or property (use appropriate 
+    documentation comments).
 
 **[[⬆]](#style-guide)**
 
 ### Single-Line Comments
-Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
 
-- On a separate line, describing the code beneath it
-- At the end of a line, describing the code before it
-- On multiple lines, to comment out sections of code
+- Should be used to documentation one line of code, or a group of related lines of code. 
+- A single-line comment may be used in three ways:
+    - On a separate line, describing the code beneath it
+    - At the end of a line, describing the code before it
+    - On multiple lines, to comment out sections of code
+- When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. \
+- Never use multiple single-line comments on consecutive lines; use a [multiline comment](#multiline-comments) instead.
 
-When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. Never use multiple single-line comments on consecutive lines; use a multiline comment instead.
+    ```javascript
+    // Good
+    if (condition){
 
-```javascript
-// Good
-if (condition){
+        // if you made it here, then all security checks passed
+        allowed();
+    }
 
+    // Bad: No empty line preceding comment
+    if (condition){
+        // if you made it here, then all security checks passed
+        allowed();
+    }
+
+    // Bad: Wrong indentation 
+    if (condition){
     // if you made it here, then all security checks passed
-    allowed();
-}
+        allowed();
+    }
 
-// Bad: No empty line preceding comment
-if (condition){
-    // if you made it here, then all security checks passed
-    allowed();
-}
+    // Bad: This should be a multiline comment
+    // This next piece of code is quite difficult, so let me explain.
+    // What you want to do is determine if the condition is true
+    // and only then allow the user in. The condition is calculated
+    // from several different functions and may change during the
+    // lifetime of the session.
+    if (condition){
+        // if you made it here, then all security checks passed
+        allowed();
+    }
+    ```
 
-// Bad: Wrong indentation 
-if (condition){
-// if you made it here, then all security checks passed
-    allowed();
-}
+- For single-line comments at the end of a line ensure that there is at least one indentation level between the end of the code and the beginning of the comment:
 
-// Bad: This should be a multiline comment
-// This next piece of code is quite difficult, so let me explain.
-// What you want to do is determine if the condition is true
-// and only then allow the user in. The condition is calculated
-// from several different functions and may change during the
-// lifetime of the session.
-if (condition){
-    // if you made it here, then all security checks passed
-    allowed();
-}
-```
+    ```javascript
+    // Good
+    var result = something + somethingElse;    // somethingElse will never be null
 
-For single-line comments at the end of a line, ensure that there is at least one indentation level between the end of the code and the beginning of the comment:
+    // Bad: Not enough space between code and comment
+    var result = something + somethingElse;// somethingElse will never be null
+    ```
 
-```javascript
-// Good
-var result = something + somethingElse;    // somethingElse will never be null
+- The only acceptable time to have multiple single-line comments on successive lines is to comment out large sections of code. 
+- Multiline comments should _not_ be used for this purpose.
 
-// Bad: Not enough space between code and comment
-var result = something + somethingElse;// somethingElse will never be null
-```
-
-The only acceptable time to have multiple single-line comments on successive lines is to comment out large sections of code. Multiline comments should not be used for this purpose.
-
-```javascript
-// Good
-// if (condition){
-//     doSomething();
-//     thenDoSomethingElse();
-// }
-```
+    ```javascript
+    // Good
+    // if (condition){
+    //     doSomething();
+    //     thenDoSomethingElse();
+    // }
+    ```
 
 **[[⬆]](#style-guide)**
 
 ### Multiline Comments
-Multiline comments should be used to document code that requires more explanation. Each multiline comment should have at least three lines:
 
-1. The first line contains only the `/*` comment opening. No further text is allowed on this line.
-2. The next line or lines have a `*` aligned with the `*` in the first line. Text is allowed on these lines.
-3. The last line has the `*/` comment opening aligned with the preceding lines. No other text is allowed on this line.
+- Multiline comments should be used to document code that requires more explanation.
+- Each multiline comment should have at least three lines:
+    1. The first line contains only the `/*` comment opening. No further text is allowed on this line.
+    2. The next line or lines have a `*` aligned with the `*` in the first line. Text is allowed on these lines.
+    3. The last line has the `*/` comment opening aligned with the preceding lines. No other text is allowed on this line.
+- The first line of a multiline comment should be indented to the same level as the code it describes. 
+- Each multiline comment should be preceded by one empty line.
 
-The first line of multiline comments should be indented to the same level as the code it describes. Each subsequent line should have the same indentation plus one space (for proper alignment of the `*` characters). Each multiline comment should be preceded by one empty line.
+    ```javascript
+    // Good
+    if (condition){
 
-```javascript
-// Good
-if (condition){
+        /*
+         * if you made it here,
+         * then all security checks passed
+         */
+        allowed();
+    }
 
+    // Bad: No empty line preceding comment
+    if (condition){
+        /*
+         * if you made it here,
+         * then all security checks passed
+         */
+        allowed();
+    }
+
+    // Bad: Missing a space after asterisk 
+    if (condition){
+
+        /*
+         *if you made it here,
+         *then all security checks passed
+         */
+        allowed();
+    }
+
+    // Bad: Wrong indentation
+    if (condition){
     /*
      * if you made it here,
      * then all security checks passed
      */
-    allowed();
-}
+        allowed();
+    }
 
-// Bad: No empty line preceding comment
-if (condition){
-    /*
-     * if you made it here,
-     * then all security checks passed
-     */
-    allowed();
-}
-
-// Bad: Missing a space after asterisk 
-if (condition){
-
-    /*
-     *if you made it here,
-     *then all security checks passed
-     */
-    allowed();
-}
-
-// Bad: Wrong indentation
-if (condition){
-/*
- * if you made it here,
- * then all security checks passed
- */
-    allowed();
-}
-
-// Bad: Don't use multi-line comments for trailing comments
-var result = something + somethingElse;    /*somethingElse will never be null*/
-```
+    // Bad: Don't use multi-line comments for trailing comments
+    var result = something + somethingElse;    /*somethingElse will never be null*/
+    ```
 
 **[[⬆]](#style-guide)**
 
 ### Comment Annotations
-Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
 
-- TODO
-- HACK
-- XXX
-- FIXME
-- REVIEW
+- Comments may be used to annotate pieces of code with additional information. 
+- These annotations take the form of a single word followed by a colon. The acceptable annotations are:
+    - `TODO`: describe missing functionality that should be added at a later date
+    - `FIXME`: describe broken code that must be fixed
+    - `OPTIMIZE`: describe code that is inefficient and may become a bottleneck
+    - `HACK`: describe the use of a questionable (or ingenious) coding practice
+    - `REVIEW`: describe code that should be reviewed to confirm implementation
+    - If a custom annotation is required, the annotation should be documented in the project's README.
+- These annotations may be used with either single-line or multiline comments and should follow the apppropriate formatting rules.
 
-#### TODO
-Indicates that the code is not yet complete. Information about the next steps should be included.
-
-#### HACK
-Indicates that the code is using a shortcut. Information about why the hack is being used should be included. This may also indicate that it would be nice to come up with a better way to solve the problem.
-
-#### XXX
-Indicates that the code is problematic and should be fixed as soon as possible.
-
-#### FIXME
-Indicates that the code is problematic and should be fixed soon. Less important than ```XXX```.
-
-#### REVIEW
-Indicates that the code needs to be reviewed for potential changes.
-
-These annotations may be used with either single-line or multiline comments and should follow the same formatting rules as the general comment type.
-
-Examples:
-
-```javascript
-// Good
-// TODO: I'd like to find a way to make this faster
-doSomething();
-
-// Good
-/*
- * HACK: Have to do this for IE. I plan on revisiting in
- * the future when I have more time. This probably should
- * get replaced before v1.2.
- */
-if (document.all) {
+    ```javascript
+    // Good
+    // TODO: I'd like to find a way to make this faster
     doSomething();
-}
 
-// Good
-// REVIEW: Is there a better way to do this? 
-if (document.all) {
+    // Good
+    /*
+     * HACK: Have to do this for IE. I plan on revisiting in
+     * the future when I have more time. This probably should
+     * get replaced before v1.2.
+     */
+    if (document.all) {
+        doSomething();
+    }
+
+    // Good
+    // REVIEW: Is there a better way to do this? 
+    if (document.all) {
+        doSomething();
+    }
+
+    // Bad: Annotation spacing is incorrect
+    // TODO : I'd like to find a way to make this faster
     doSomething();
-}
 
-// Bad: Annotation spacing is incorrect
-// TODO : I'd like to find a way to make this faster
-doSomething();
-
-// Bad: Comment should be at the same indentation as code 
-    // REVIEW: Is there a better way to do this?
-if (document.all) {
-    doSomething();
-}
-```
+    // Bad: Comment should be at the same indentation as code 
+        // REVIEW: Is there a better way to do this?
+    if (document.all) {
+        doSomething();
+    }
+    ```
 
 **[[⬆]](#style-guide)**
 
 ## Variable Declarations
-All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single var statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
 
-```javascript
-// Good
-var count   = 10,
-    name    = "Nicholas",
-    found   = false, 
-    empty;
+- All variables should be declared **before** they are used. 
+- Variable declarations should take place _at the beginning of a function_.
+- Variable declarations should be done using a single `var` statement with one variable per line. 
+- All lines after the first should be indented one level so that the variable names line up. 
+- Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level.
+- Initialized variables should come first, followed by uninitialized variables.
 
-// Bad: Improper initialization alignment
-var count = 10,
+    ```javascript
+    // Good
+    var count   = 10,
+        name    = "Nicholas",
+        found   = false, 
+        empty;
+
+    // Bad: Improper initialization alignment
+    var count = 10,
+        name = "Nicholas",
+        found= false,
+        empty;
+
+    // Bad: Incorrect indentation
+    var count = 10,
     name = "Nicholas",
-    found= false,
+    found = false,
     empty;
 
-// Bad: Incorrect indentation
-var count = 10,
-name = "Nicholas",
-found = false,
-empty;
+    // Bad: Multiple declarations on one line
+    var count = 10, name = "Nicholas",
+        found = false, empty;
 
-// Bad: Multiple declarations on one line
-var count = 10, name = "Nicholas",
-    found = false, empty;
+    // Bad: Uninitialized variables first 
+    var empty,
+        count   = 10,
+        name    = "Nicholas",
+        found   = false;
 
-// Bad: Uninitialized variables first 
-var empty,
-    count   = 10,
-    name    = "Nicholas",
-    found   = false;
+    // Bad: Multiple var statements 
+    var count   = 10,
+        name    = "Nicholas";
 
-// Bad: Multiple var statements 
-var count   = 10,
-    name    = "Nicholas";
-
-var found   = false,
-    empty;
-```
+    var found   = false,
+        empty;
+    ```
 
 Always declare variables. Implied globals should not be used.
 
