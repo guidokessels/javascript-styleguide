@@ -289,7 +289,6 @@ the expression clear.
     - Additional empty lines may be inserted to group related properties or otherwise improve 
     readability.
     - The closing brace should be on a separate line.
-- Examples:
 
     ```javascript
     // Good
@@ -351,7 +350,7 @@ line as if the value is a variable. All other formatting rules listed earlier st
 
 ### Single-Line Comments
 
-- Should be used to documentation one line of code, or a group of related lines of code. 
+- Should be used to document one line of code, or a group of related lines of code. 
 - A single-line comment may be used in three ways:
     - On a separate line, describing the code beneath it
     - At the end of a line, describing the code before it
@@ -528,35 +527,35 @@ line as if the value is a variable. All other formatting rules listed earlier st
     ```javascript
     // Good
     var count   = 10,
-        name    = "Nicholas",
+        name    = "SpilGames",
         found   = false, 
         empty;
 
     // Bad: Improper initialization alignment
     var count = 10,
-        name = "Nicholas",
+        name = "SpilGames",
         found= false,
         empty;
 
     // Bad: Incorrect indentation
     var count = 10,
-    name = "Nicholas",
+    name = "SpilGames",
     found = false,
     empty;
 
     // Bad: Multiple declarations on one line
-    var count = 10, name = "Nicholas",
+    var count = 10, name = "SpilGames",
         found = false, empty;
 
     // Bad: Uninitialized variables first 
     var empty,
         count   = 10,
-        name    = "Nicholas",
+        name    = "SpilGames",
         found   = false;
 
     // Bad: Multiple var statements 
     var count   = 10,
-        name    = "Nicholas";
+        name    = "SpilGames";
 
     var found   = false,
         empty;
@@ -603,7 +602,7 @@ line as if the value is a variable. All other formatting rules listed earlier st
     function outer() {
 
         var count = 10,
-            name = "Nicholas",
+            name = "SpilGames",
             found = false,
             empty;
 
@@ -620,8 +619,8 @@ line as if the value is a variable. All other formatting rules listed earlier st
             // code
         }
         
-        var count
-            name = "Nicholas",
+        var count,
+            name = "SpilGames",
             found = false,
             empty;
 
