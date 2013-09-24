@@ -566,7 +566,6 @@ line as if the value is a variable. All other formatting rules listed earlier st
 ## Function Declarations
 
 - Functions should be declared before they are used.
-- When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the `Function` constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 - Function declarations should have the following format:
 
     ```javascript
