@@ -45,12 +45,17 @@ code more readable, and thus more easier to maintain.
 ## Code Layout
 
 ### Indentation
-Each indentation level is made up of four spaces. No tabs.
+Each indentation level is made up of four spaces. **No tabs.**
 
 ```javascript
-//Good
+// Good
 if (true) {
-    doSomething();
+∙∙∙∙doSomething();
+}
+
+// Bad
+if (true) {
+∙∙doSomething();
 }
 ```
 
