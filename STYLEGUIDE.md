@@ -683,97 +683,113 @@ line as if the value is a variable. All other formatting rules listed earlier st
 **[[⬆]](#style-guide)**
 
 ## Naming
-Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
 
-Variable names should be formatted in camel case with the first letter lowercase and the first letter of each subsequent word uppercase. The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. Do not use underscores in variable names.
+- Be descriptive with your naming.
+- Names should be limited to alphanumeric characters and, in some cases, the underscore character.
+- Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
 
-```javascript
-// Good
-var accountNumber = "8401-1";
+- Variables
+    - Variable names should be formatted in **CamelCase**
+    - The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. 
+    - Do not use underscores in variable names.
 
-// Bad: Begins with uppercase letter
-var AccountNumber = "8401-1";
+    ```javascript
+    // Good
+    var accountNumber = "8401-1";
 
-// Bad: Begins with verb
-var getAccountNumber = "8401-1";
+    // Bad: Begins with uppercase letter
+    var AccountNumber = "8401-1";
 
-// Bad: Uses underscore
-var account_number = "8401-1";
-```
+    // Bad: Begins with verb
+    var getAccountNumber = "8401-1";
 
-Function names should also be formatted using camel case. The first word of a function name should be a verb (not a noun) to avoid confusion with variables. Do not use underscores in function names.
+    // Bad: Uses underscore
+    var account_number = "8401-1";
+    ```
 
-```javascript
-// Good
-function doSomething() {
-    // code
-}
+- Functions 
+    - Function names should also be formatted using **CamelCase**. 
+    - The first word of a function name should be a verb (not a noun) to avoid confusion with variables.
+    - Do not use underscores in function names.
 
-// Bad: Begins with uppercase letter
-function DoSomething() {
-    // code
-}
-
-// Bad: Begins with noun
-function car() {
-    // code
-}
-
-// Bad: Uses underscores
-function do_something() {
-    // code
-}
-```
-
-Constructor functions -functions used with the `new` operator to create new objects— should be formatted in camel case but must begin with an uppercase letter. Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
-
-```javascript
-// Good
-function MyObject() {
-    // code
-}
-
-// Bad: Begins with lowercase letter
-function myObject() {
-    // code
-}
-
-// Bad: Uses underscores
-function My_Object() {
-    // code
-}
-
-// Bad: Begins with verb
-function getMyObject() {
-    // code
-}
-```
-
-Variables that act as constants (values that won’t be changed) should be formatted using all uppercase letters with words separated by a single underscore.
-
-```javascript
-// Good
-var TOTAL_COUNT = 10;
-
-// Bad: Camel case
-var totalCount = 10;
-
-// Bad: Mixed case
-var total_COUNT = 10;
-```
-
-Object properties follow the same naming conventions as variables. Object methods follow the same naming conventions as functions. If a property or method is meant to be private, then it should be prefixed with an underscore character.
-
-```javascript
-// Good
-var object = {
-    _count: 10,
-
-    _getCount: function () {
-        return this._count;
+    ```javascript
+    // Good
+    function doSomething() {
+        // code
     }
-};
-```
+
+    // Bad: Begins with uppercase letter
+    function DoSomething() {
+        // code
+    }
+
+    // Bad: Begins with noun
+    function car() {
+        // code
+    }
+
+    // Bad: Uses underscores
+    function do_something() {
+        // code
+    }
+    ```
+
+- Constructor Functions
+    - Constructor functions are functions used with the `new` operator to create new objects
+    - Should be formatted in **PascalCase**.
+    - Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
+
+    ```javascript
+    // Good
+    function MyObject() {
+        // code
+    }
+
+    // Bad: Begins with lowercase letter
+    function myObject() {
+        // code
+    }
+
+    // Bad: Uses underscores
+    function My_Object() {
+        // code
+    }
+
+    // Bad: Begins with verb
+    function getMyObject() {
+        // code
+    }
+    ```
+
+- Constants
+    - Variables that act as constants (values that won’t be changed) should be formatted using all uppercase letters, with words separated by a single underscore.
+
+    ```javascript
+    // Good
+    var TOTAL_COUNT = 10;
+
+    // Bad: CamelCase
+    var totalCount = 10;
+
+    // Bad: Mixed case
+    var total_COUNT = 10;
+    ```
+
+- Object properties and methods
+    - Object properties follow the same naming conventions as variables.
+    - Object methods follow the same naming conventions as functions.
+    - If a property or method is meant to be private, then it should be prefixed with an single underscore character.
+
+    ```javascript
+    // Good
+    var object = {
+        _count: 10,
+
+        _getCount: function () {
+            return this._count;
+        }
+    };
+    ```
 
 **[[⬆]](#style-guide)**
 
