@@ -9,7 +9,7 @@ The goal of a style guide is that all code in any code-base should look like a s
 it, even when many people are contributing to it. Consistency in code style and formatting makes 
 code more readable, and thus more easier to maintain. 
 
-## Style Guide
+# Style Guide
 
 - [Indentation](#indentation)
 - [Line Length](#line-length)
@@ -41,7 +41,7 @@ code more readable, and thus more easier to maintain.
 - [White Space](#white-space)
 - [Things To Avoid](#things-to-avoid)
 
-### Indentation
+## Indentation
 Each indentation level is made up of four spaces. No tabs.
 
 ```javascript
@@ -53,7 +53,7 @@ if (true) {
 
 **[[⬆]](#style-guide)**
 
-### Line Length
+## Line Length
 Each line should be no longer than 100 characters. If a line goes longer than 100 characters, it 
 should be wrapped after an operator (comma, plus, etc.) The following line should be indented two
 levels (eight spaces.)
@@ -74,7 +74,7 @@ doSomething(argument1, argument2, argument3, argument4
 
 **[[⬆]](#style-guide)**
 
-### Primitive Literals
+## Primitive Literals
 Strings should always use single quotes and should always be on a single line.
 
 ```javascript
@@ -178,7 +178,7 @@ if (variable === undefined) {
 
 **[[⬆]](#style-guide)**
 
-### Operator Spacing
+## Operator Spacing
 Operators with two operands must be preceded and followed by a single space to make
 the expression clear. Operators include assignments and logical operators.
 
@@ -212,7 +212,7 @@ for (i=0; i<count; i++) {
 
 **[[⬆]](#style-guide)**
 
-### Parentheses Spacing
+## Parentheses Spacing
 When parentheses are used, there should be no white space immediately after the
 opening paren or immediately before the closing paren.
 
@@ -246,7 +246,7 @@ for (i = 0; i < count; i++) {
 
 **[[⬆]](#style-guide)**
 
-### Object Literals
+## Object Literals
 Object literals should have the following format:
 
 - The opening brace should be on the same line as the containing statement.
@@ -308,7 +308,7 @@ doSomething({ key1: value1, key2: value2 });
 
 **[[⬆]](#style-guide)**
 
-### Comments
+## Comments
 Make frequent use of comments to aid others in understanding your code. Use comments
 when:
 
@@ -320,7 +320,7 @@ documentation comments).
 
 **[[⬆]](#style-guide)**
 
-#### Single-Line Comments
+### Single-Line Comments
 Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
 
 - On a separate line, describing the code beneath it
@@ -383,7 +383,7 @@ The only acceptable time to have multiple single-line comments on successive lin
 
 **[[⬆]](#style-guide)**
 
-#### Multiline Comments
+### Multiline Comments
 Multiline comments should be used to document code that requires more explanation. Each multiline comment should have at least three lines:
 
 1. The first line contains only the `/*` comment opening. No further text is allowed on this line.
@@ -437,7 +437,7 @@ var result = something + somethingElse;    /*somethingElse will never be null*/
 
 **[[⬆]](#style-guide)**
 
-#### Comment Annotations
+### Comment Annotations
 Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
 
 - TODO
@@ -446,19 +446,19 @@ Comments may be used to annotate pieces of code with additional information. The
 - FIXME
 - REVIEW
 
-##### TODO
+#### TODO
 Indicates that the code is not yet complete. Information about the next steps should be included.
 
-##### HACK
+#### HACK
 Indicates that the code is using a shortcut. Information about why the hack is being used should be included. This may also indicate that it would be nice to come up with a better way to solve the problem.
 
-##### XXX
+#### XXX
 Indicates that the code is problematic and should be fixed as soon as possible.
 
-##### FIXME
+#### FIXME
 Indicates that the code is problematic and should be fixed soon. Less important than ```XXX```.
 
-##### REVIEW
+#### REVIEW
 Indicates that the code needs to be reviewed for potential changes.
 
 These annotations may be used with either single-line or multiline comments and should follow the same formatting rules as the general comment type.
@@ -499,7 +499,7 @@ if (document.all) {
 
 **[[⬆]](#style-guide)**
 
-### Variable Declarations
+## Variable Declarations
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single var statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
 
 ```javascript
@@ -543,7 +543,7 @@ Always declare variables. Implied globals should not be used.
 
 **[[⬆]](#style-guide)**
 
-### Function Declarations
+## Function Declarations
 Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the `Function` constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 
 ```javascript
@@ -655,7 +655,7 @@ var value = (function() {
 
 **[[⬆]](#style-guide)**
 
-### Naming
+## Naming
 Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
 
 Variable names should be formatted in camel case with the first letter lowercase and the first letter of each subsequent word uppercase. The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. Do not use underscores in variable names.
@@ -750,7 +750,7 @@ var object = {
 
 **[[⬆]](#style-guide)**
 
-### Strict Mode
+## Strict Mode
 Strict mode should be used only inside of functions, never globally.
 
 ```javascript
@@ -787,7 +787,7 @@ If you want strict mode to apply to multiple functions without needing to write 
 
 **[[⬆]](#style-guide)**
 
-### Assignments
+## Assignments
 When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
 
 ```javascript
@@ -800,7 +800,7 @@ var flag = i < count;
 
 **[[⬆]](#style-guide)**
 
-### Equality Operators
+## Equality Operators
 Use `===` and `!==` instead of `==` and `!=` to avoid type coercion errors.
 
 ```javascript
@@ -813,7 +813,7 @@ var same = (a == b);
 
 **[[⬆]](#style-guide)**
 
-### Ternary Operators
+## Ternary Operators
 The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
 
 ```javascript
@@ -826,9 +826,9 @@ condition ? doSomething() : doSomethingElse();
 
 **[[⬆]](#style-guide)**
 
-### Statements
+## Statements
 
-#### Simple Statements
+### Simple Statements
 Each line should contain at most one statement. All simple statements should end with a semicolon (`;`).
 
 ```javascript
@@ -840,7 +840,7 @@ a = b;
 count++; a = b;
 ```
 
-#### `return` Statement
+### `return` Statement
 A `return` statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
 
 ```javascript
@@ -851,7 +851,7 @@ return collection.size();
 return (size > 0 ? size : defaultSize);
 ```
 
-#### Compound Statements
+### Compound Statements
 Compound statements are lists of statements enclosed inside of braces.
 
 - The enclosed statements should be indented one more level than the compound statement.
@@ -859,7 +859,7 @@ Compound statements are lists of statements enclosed inside of braces.
 - Braces are used around all statements, even single statements, when they are part of a control structure, such as an `if` or `for` statement. This convention makes it easier to add statements without accidentally introducing bugs by forgetting to add braces.
 - The statement beginning keyword, such as `if`, should be followed by one space, and the opening brace should be preceded by a space.
 
-#### `if` Statement
+### `if` Statement
 The if class of statements should have the following form:
 
 ```javascript
@@ -906,7 +906,7 @@ if (condition) { doSomething(); }
 if (condition) doSomething();
 ```
 
-#### `for` Statement
+### `for` Statement
 The for class of statements should have the following form:
 
 ```javascript
@@ -943,7 +943,7 @@ for (var prop in object) {
 
 When using a `for-in` statement, double-check if you need to use `hasOwnProperty()` to filter out object members.
 
-#### `while` Statement
+### `while` Statement
 The `while` class of statements should have the following form:
 
 ```javascript
@@ -952,7 +952,7 @@ while (condition) {
 }
 ```
 
-#### `do` Statement
+### `do` Statement
 The `do` class of statements should have the following form:
 
 ```javascript
@@ -963,7 +963,7 @@ do {
 
 Note the use of a semicolon as the final part of this statement. There should be a space before and after the `while` keyword.
 
-#### `switch` Statement
+### `switch` Statement
 The `switch` class of statements should have the following form:
 
 ```javascript
@@ -1016,7 +1016,7 @@ switch (value) {
 }
 ```
 
-#### `try` Statement
+### `try` Statement
 The `try` class of statements should have the following form:
 
 ```javascript
@@ -1037,7 +1037,7 @@ try {
 
 **[[⬆]](#style-guide)**
 
-### White Space
+## White Space
 Blank lines improve readability by setting off sections of code that are logically related. Two blank lines should always be used in the following circumstances:
 
 - Between sections of a source file
@@ -1059,7 +1059,7 @@ Blank spaces should be used in the following circumstances:
 
 **[[⬆]](#style-guide)**
 
-### Things To Avoid
+## Things To Avoid
 
 - Never use the primitive wrapper types, such as `String`, to create new objects.
 - Never use `eval()`.
@@ -1067,7 +1067,7 @@ Blank spaces should be used in the following circumstances:
 
 **[[⬆]](#style-guide)**
 
-## Sources
+# Sources
 
 A lot of content in this document originated from the following sources:
 
