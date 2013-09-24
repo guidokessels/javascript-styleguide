@@ -45,6 +45,7 @@ code more readable, and thus more easier to maintain.
     - [`try` Statement](#try-statement)
 - [White Space](#white-space)
 - [Things To Avoid](#things-to-avoid)
+- [Resources](#resources)
 
 ## Code Layout
 
@@ -1143,11 +1144,7 @@ line as if the value is a variable. All other formatting rules listed earlier st
 
 **[[⬆]](#style-guide)**
 
-# Sources
+# Resources
 
-A lot of content in this document originated from the following sources:
-
-- ["Maintainable JavaScript" - _Nicolas C. Zakas_](http://shop.oreilly.com/product/0636920025245.do)
-- http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/
-- https://github.com/rwaldron/idiomatic.js/
-- https://github.com/airbnb/javascript/
+- [ECMAScript 5 Compatibility table](http://kangax.github.io/es5-compat-table/)
+- [Annotated ECMAScript 5.1](http://es5.github.io/)

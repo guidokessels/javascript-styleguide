@@ -21,3 +21,12 @@ The goals of this repository:
         - Runs in editor (SublimeText, etc.)
     - Provide `.editorconfig` (see [editorconfig.org](http://editorconfig.org))
     - Style fixer: Automatically fix code (e.g., via [CodePainter](https://github.com/fawek/codepainter))
+
+## Sources
+
+A lot of content in this repository originated from the following sources:
+
+- ["Maintainable JavaScript" - _Nicolas C. Zakas_](http://shop.oreilly.com/product/0636920025245.do)
+- https://github.com/airbnb/javascript/
+- https://github.com/rwaldron/idiomatic.js/
+- http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/
