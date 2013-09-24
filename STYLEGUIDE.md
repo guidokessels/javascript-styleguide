@@ -11,12 +11,13 @@ code more readable, and thus more easier to maintain.
 
 # Style Guide
 
-- [Indentation](#indentation)
-- [Line Length](#line-length)
-- [Primitive Literals](#primitive-literals)
-- [Operator Spacing](#operator-spacing)
-- [Parentheses Spacing](#parentheses-spacing)
-- [Object Literals](#object-literals)
+- [Code Layout](#code-layout)
+    - [Indentation](#indentation)
+    - [Line Length](#line-length)
+    - [Primitive Literals](#primitive-literals)
+    - [Operator Spacing](#operator-spacing)
+    - [Parentheses Spacing](#parentheses-spacing)
+    - [Object Literals](#object-literals)
 - [Comments](#comments)
     - [Single-Line Comments](#single-line-comments)
     - [Multiline Comments](#multiline-comments)
@@ -41,7 +42,9 @@ code more readable, and thus more easier to maintain.
 - [White Space](#white-space)
 - [Things To Avoid](#things-to-avoid)
 
-## Indentation
+## Code Layout
+
+### Indentation
 Each indentation level is made up of four spaces. No tabs.
 
 ```javascript
@@ -53,7 +56,7 @@ if (true) {
 
 **[[⬆]](#style-guide)**
 
-## Line Length
+### Line Length
 Each line should be no longer than 100 characters. If a line goes longer than 100 characters, it 
 should be wrapped after an operator (comma, plus, etc.) The following line should be indented two
 levels (eight spaces.)
@@ -74,7 +77,7 @@ doSomething(argument1, argument2, argument3, argument4
 
 **[[⬆]](#style-guide)**
 
-## Primitive Literals
+### Primitive Literals
 Strings should always use single quotes and should always be on a single line.
 
 ```javascript
@@ -178,7 +181,7 @@ if (variable === undefined) {
 
 **[[⬆]](#style-guide)**
 
-## Operator Spacing
+### Operator Spacing
 Operators with two operands must be preceded and followed by a single space to make
 the expression clear. Operators include assignments and logical operators.
 
@@ -212,7 +215,7 @@ for (i=0; i<count; i++) {
 
 **[[⬆]](#style-guide)**
 
-## Parentheses Spacing
+### Parentheses Spacing
 When parentheses are used, there should be no white space immediately after the
 opening paren or immediately before the closing paren.
 
@@ -246,7 +249,7 @@ for (i = 0; i < count; i++) {
 
 **[[⬆]](#style-guide)**
 
-## Object Literals
+### Object Literals
 Object literals should have the following format:
 
 - The opening brace should be on the same line as the containing statement.
