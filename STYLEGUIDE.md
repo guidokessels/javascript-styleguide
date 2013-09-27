@@ -568,12 +568,18 @@ line as if the value is a variable. All other formatting rules listed earlier st
 
 - Functions should be declared before they are used.
 - Function declarations should have the following format:
+- also default see jslint style guide
 
     ```javascript
     // Good
     function doSomething(arg1, arg2) {
         return arg1 + arg2;
     }
+
+    // Good
+    doSomething = function (arg1, arg2) {
+        return arg1 + arg2;
+    };
 
     // Bad: Improper spacing of first line
     function doSomething (arg1, arg2){
