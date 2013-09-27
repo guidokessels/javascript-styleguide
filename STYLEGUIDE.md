@@ -71,12 +71,28 @@ code more readable, and thus more easier to maintain.
 
 - Each line should be no longer than **100 characters**.
 - If a line goes longer than 100 characters, it should be wrapped after an operator (comma, plus, etc.)
-- The following line should be indented two levels (eight spaces.)
+- The following line should be matching aligned with the arguments
 
     ```javascript
     // Good
     doSomething(argument1, argument2, argument3, argument4,
-            argument5);
+                argument5);
+                
+    // Or
+    doSomething(
+        argument1,
+        argument2,
+        argument3,
+        argument4,
+        argument5
+    );
+    
+    // Or
+    doSomething(argument1,
+                argument2,
+                argument3,
+                argument4,
+                argument5);
 
     // Bad: Following line only indented four spaces
     doSomething(argument1, argument2, argument3, argument4,
