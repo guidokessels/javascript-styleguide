@@ -45,6 +45,7 @@ code more readable, and thus more easier to maintain.
     - [`try` Statement](#try-statement)
 - [White Space](#white-space)
 - [Things To Avoid](#things-to-avoid)
+- [Parting words](#parting-words)
 - [Resources](#resources)
 
 ## Code Layout
@@ -1144,7 +1145,19 @@ line as if the value is a variable. All other formatting rules listed earlier st
 
 **[[⬆]](#style-guide)**
 
+## Parting Words
+
+_BE CONSISTENT_.
+
+If you're editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.
+
+The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
+
+
+**[[⬆]](#style-guide)**
+
 # Resources
 
 - [ECMAScript 5 Compatibility table](http://kangax.github.io/es5-compat-table/)
 - [Annotated ECMAScript 5.1](http://es5.github.io/)
+- [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
