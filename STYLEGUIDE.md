@@ -70,15 +70,15 @@ code more readable, and thus more easier to maintain.
 ### Line Length
 
 - Each line should be no longer than **100 characters**.
-- If a line goes longer than 100 characters, it should be wrapped after an operator (comma, plus, etc.)
-- The following line should be matching aligned with the arguments
+- If a line goes longer than 100 characters, it should be wrapped after an operator (comma, plus, etc.) The following line should be aligned with the first argument on the previous line
+- It is also allowed to specify a single argument per line, optionally with a newline before the first and after the last argument
 
     ```javascript
     // Good
     doSomething(argument1, argument2, argument3, argument4,
                 argument5);
                 
-    // Or
+    // Good
     doSomething(
         argument1,
         argument2,
@@ -87,14 +87,14 @@ code more readable, and thus more easier to maintain.
         argument5
     );
     
-    // Or
+    // Good
     doSomething(argument1,
                 argument2,
                 argument3,
                 argument4,
                 argument5);
 
-    // Bad: Following line only indented four spaces
+    // Bad: argument5 is not aligned with argument1
     doSomething(argument1, argument2, argument3, argument4,
         argument5);
 
